@@ -1,0 +1,8 @@
+﻿/* 下面的css使input的寬度不會超過div */
+td > input {
+  width:100%;
+
+  /* 使元素的寬度包括padding margin, border*/
+  box-sizing:border-box; 
+  -moz-box-sizing:border-box;
+}

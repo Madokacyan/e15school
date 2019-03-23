@@ -1,0 +1,1 @@
+建立新檔案在名稱上輸入"/images/create Folders way.txt"即建立一個資料夾

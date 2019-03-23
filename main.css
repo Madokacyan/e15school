@@ -1,0 +1,273 @@
+*{
+  box-sizing:border-box;
+}
+body{
+  margin:0;
+  padding:0;
+  background: #ccc;
+  font-size:14px;
+  font-family:"微軟正黑體";
+  color:#666
+}
+
+a{
+  text-decoration: none;
+  color:#666
+}
+.ma{
+  margin:auto; 
+  border-radius:10px;
+}
+.ct{
+  text-align: center;
+}
+.tr{
+  text-align: right;
+}
+.tl{
+  text-align: left;
+}
+.bb{
+  font-weight: bolder;
+}
+.bs{
+  border-spacing: 0;
+  border:1px solid #6DD0CD;
+  box-shadow:3px 5px 5px #888;
+  border-radius:10px;
+}
+th,.th{
+  background: #6DD0CD;
+  padding:5px;
+  font-weight: bolder;
+  color:white;
+  line-height: 2em;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.tdl{
+  border:1px solid #6DD0CD;
+  padding:5px;
+}
+.lh3{
+  line-height: 3em;
+}
+.line{
+  border:0;
+  border-bottom: 1px solid darkcyan;
+}
+/****index.php**************************************************/
+#index{
+  position: absolute;
+  width:1024px;
+  height:600px;
+  top:50%;
+  left:50%;
+  margin-top:-300px;
+  margin-left:-512px;
+  box-shadow:0 0 10px;
+}
+#index img{
+  background: url("images/index.jpg");
+  background-size: cover;
+  width:100%;
+  height:100%;
+}
+/****main.php**************************************************/
+#top{
+  background:darkcyan;
+  color: white;
+  font-size: 13px;
+  text-align: right;
+  padding: 20px;
+  box-shadow: 0 0 10px black;
+}
+#wrap{
+  width:1024px;
+  margin:50px auto 0 auto;
+  background: white;
+  box-shadow: 0 0 10px;
+}
+header{
+  background: url("images/banner.jpg");
+  width:100%;
+  height:119px;
+  background-size: cover;
+}
+nav{
+  background:#6DD0CD;
+  width: 100%;
+  line-height: 2.5em;
+  box-shadow: 0 5px darkcyan;
+}
+.mu{
+  display: inline-block;
+  width:100px; /******************************************10%****/
+  text-align: center;
+  position: relative;
+}
+.mu:hover{
+  background:darkcyan;
+  font-weight: bolder;
+  /*line-height: 2em;
+  border:3px dashed #6DD0CD;*/
+}
+.mu:hover>a{
+  text-shadow:none;
+}
+.mu a{
+  color: white;
+  text-shadow:2px 2px 4px black;
+}
+.sub{
+  display: none;
+  width: 100%;
+  position: absolute;
+  line-height: 2.5em;
+}
+.mu:hover .sub{
+  display: block;
+  background: rgba(109, 208, 205,0.5);
+  border:5px solid darkcyan;
+  z-index:999;
+}
+
+.sub a:hover{
+  background: darkcyan;
+  font-weight: bolder;
+  text-shadow:none;
+}
+.sub a{
+  display: block;
+  color: white;
+  text-shadow:2px 2px 4px black;
+}
+
+#main{
+  width:100%;
+  min-height: 500px;
+  padding:20px 10px;
+}
+
+/****news.php**************************************************/
+#left,#right{
+  width:20%;
+  min-height: 300px;
+  float: left;
+}
+#con{
+  width:60%;
+  float: left;
+  padding:0 10px 20px 10px;
+}
+.ltop{
+  width:90%;
+  background: darkcyan;
+  color: white;
+  padding:10px;
+  border:3px solid darkcyan;
+  border-radius:0 50px;
+}
+.lnav{
+  width:70%;
+  margin:10px auto;
+  background: #6DD0CD;
+  color: white;
+  text-shadow:2px 2px 4px black;
+  line-height: 3em;
+  border-radius:50px 0;
+  box-shadow: 0 3px darkcyan;
+}
+.lnav:hover{
+  width:80%;
+  background: darkcyan;
+  text-shadow:none;
+  font-weight: bolder;
+  border-radius:0 50px;
+}
+
+footer{
+  clear:both;
+  background: darkcyan;
+  color: white;
+  line-height: 3em;
+  text-align: center;
+}
+/****admin.php**************************************************/
+fieldset{
+  width:30%;
+  border:2px solid darkcyan;
+  box-shadow: 0 5px 10px;
+  border-radius:10px;
+}
+.admu{
+  width:90%;
+  background:darkcyan;
+  color:white;
+  font-weight: bolder;
+  /*border:3px solid darkcyan ;*/
+  padding:15px 10px 10px 10px;
+  border-radius: 0 20px 50px 0 ;
+}
+#admu{
+  width:90%;
+  background:#6DD0CD;
+  color:white;
+  font-weight: bolder;
+  padding:15px 10px 10px 10px;
+  border-radius:0 20px 50px 0;
+}
+
+.list{
+  background:#6DD0CD;
+  margin-top: 15px;
+  line-height: 3.2em;
+  border-radius: 0 20px 40px 0 ;
+  border:2px groove white;
+}
+.list:hover{
+  border:none;
+}
+#list{
+  background:white;
+  margin-top: 15px;
+  line-height: 3.2em;
+  border-radius:0 20px 40px 0;
+}
+
+
+.list a:hover{
+  text-shadow:none;
+  font-weight: bolder;
+  line-height: 3.5em;
+  background: darkcyan;
+  border-radius: 0 10px 50px 0 ;
+/**dashed造型**
+  border:5px dashed #6DD0CD;
+  color: white;
+  line-height: 2.5em;
+  text-shadow:2px 2px 4px black ;
+*/
+}
+#list a:hover{
+  color: #888;
+  line-height: 2.5em;
+  border:5px ridge #6DD0CD;
+  border-radius:0 10px 50px 0;
+}
+
+.list a{
+  display: block;
+  font-weight: normal;
+  color: white;
+  text-shadow:2px 2px 4px black;
+}
+#list a{
+  display:block;
+  color: #6DD0CD;
+}
+
+/****book.php**************************************************/
+.book{
+  width:77%;
+}

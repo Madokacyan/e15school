@@ -1,0 +1,111 @@
+﻿https://zh-tw.facebook.com/notes/chia-wei-huang/mysql%E8%B3%87%E6%96%99%E5%BA%AB%E4%BA%82%E7%A2%BC%E8%A7%A3%E6%B1%BA%E6%96%B9%E5%BC%8F/268568743159171/
+Chia Wei Huang
+JHNET宅網資訊社－網路工程師
+
+
+
+MySql資料庫亂碼解決方式
+2011年8月9日下午3:04
+MySql資料庫亂碼解決方式big5 or utf8
+
+網路上已經有許多的解決方式、如修改my.ini在此就不在多做說明
+
+資料庫連接方式、不管您是用那種寫法
+
+都必須把mysql_query("SET NAMES utf8");或mysql_query("SET NAMES big5");加在link後面
+
+值得注意的地方是utf8部份、有人寫utf8和utf-8及有引號'utf8'和沒引號utf8兩種
+
+本身是沒遇到什麼狀況、只是此問題在網路上問了又問、小弟就單純的把經驗分享出來
+
+小弟是用utf8的編碼、所以在設定上是下面這一行、無引號且是utf8
+
+mysql_query("SET NAMES utf8");
+
+================================================================
+
+範例一：
+
+$dbhost = 'localhost';
+
+$dbuser = 'root';
+
+$dbpass = '12345';
+
+$dbname = 'test';
+
+$conn = mysql_connect($dbhost, $dbuser, $dbpass) or die('Error with MySQL connection');
+
+↑這地方就是連接MySql的語法、請在此行後加入↓
+
+mysql_query("SET NAMES utf8");
+
+或
+
+mysql_query("SET NAMES big5");
+
+================================================================
+
+範例二：
+
+$host = "localhost";
+
+$link = mysql_connect($host, "xxx", "xxx");
+
+↑這地方就是連接MySql的語法、請在此行後加入↓
+
+mysql_query("SET NAMES utf8");
+
+或
+
+mysql_query("SET NAMES big5");
+
+mysql_select_db("your_table_name_here", $link);
+
+================================================================
+
+範例三：
+
+$gb_server_name = "localhost";
+
+$gb_username    = "root";
+
+$gb_password    = "12345";
+
+$gb_database    = "gb";
+
+ 
+
+    function insert_sql($sql)
+
+    {
+
+ 
+
+            global $mysql_server_name, $mysql_username, $mysql_password, $mysql_database;
+
+ 
+
+            $conn=mysql_connect( $mysql_server_name, $mysql_username, $mysql_password);
+
+            ↑這地方就是連接MySql的語法、請在此行後加入↓
+
+            mysql_query("SET NAMES utf8");
+
+            或
+
+            mysql_query("SET NAMES big5");
+
+ 
+
+            mysql_select_db($mysql_database,$conn);
+
+            $result = mysql_query($sql);
+
+            $id = mysql_insert_id();
+
+            mysql_close($conn);    
+
+            return $id;
+
+    }
